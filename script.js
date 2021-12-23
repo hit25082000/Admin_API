@@ -3,14 +3,13 @@ const Storage = {
       return JSON.parse(localStorage.getItem("Admin:usuarios")) || []
   },  
 
-  set(usuarios) {
-    console.log(usuarios),
+  set(usuarios) {    
       localStorage.setItem("Admin:usuarios", JSON.stringify(usuarios))
   }
 }
 
-const usuarios = []
 const user = {  
+  users: Storage.get(),
 
   login: document.querySelector('input#login'),
   password: document.querySelector('input#password'),
@@ -43,11 +42,11 @@ const user = {
 
       const usuario = user.getValues()
       console.log(usuario)
-
-      usuarios.push(usuario) 
-      Storage.get().push(usuario)  
       
-      console.log(usuarios)
+      user.users.push(usuario)  
+      Storage.set(user.users)
+      
+      
       user.clear()
       
     } catch (error) {
@@ -67,5 +66,5 @@ const user = {
   },  
 }
 
-Storage.set(Storage.get())
+
 
