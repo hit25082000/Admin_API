@@ -1,8 +1,22 @@
-const user = {
-  login: document.getElementById('login'),
-  password: document.getElementById('password'),
+const Storage = {
+  get() {
+      return JSON.parse(localStorage.getItem("Admin:usuarios")) || []
+  },  
 
-  submit(event){
+  set(usuarios) {
+    console.log(usuarios),
+      localStorage.setItem("Admin:usuarios", JSON.stringify(usuarios))
+  }
+}
+
+const usuarios = []
+const user = {  
+
+  login: document.querySelector('input#login'),
+  password: document.querySelector('input#password'),
+  passwordConfirm: document.querySelector('input#passwordConfirm'),
+
+  log(event){
     event.preventDefault();
     try {
       user.validate()
@@ -10,15 +24,48 @@ const user = {
       alert(error.message)
     }
   },
+
+  getValues(){
+    return {
+      login: user.login.value,
+      password: user.password.value
+    }
+  },
+
+  clear(){
+    
+  },
+
+  submit(event){
+    event.preventDefault()
+    try {
+      
+
+      const usuario = user.getValues()
+      console.log(usuario)
+
+      usuarios.push(usuario) 
+      Storage.get().push(usuario)  
+      
+      console.log(usuarios)
+      user.clear()
+      
+    } catch (error) {
+      alert(error.message)
+    }
+  },
+
   validate(){
     if(user.login.value === "",
        user.password.value === ""){
-       throw new Error("Por favor, preencha todos os campos")
-    }
-    if(user.login.value.length < 4){
       throw new Error("Por favor, preencha todos os campos")
-
     }
-  }  
+    if(user.login.value.length < 4,
+       user.password.value.length < 4){
+      throw new Error("Por favor, preencha todos os campos")
+    }
+  },  
 }
+
+Storage.set(Storage.get())
 
