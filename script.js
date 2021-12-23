@@ -40,9 +40,11 @@ const user = {
     }
   },
 
-  clear(){
-    
-  },
+  clear() {
+    user.login.value = ""
+    user.password.value = ""
+    user.passwordConfirm.value = ""
+},
 
   submit(event){
     event.preventDefault()
@@ -66,6 +68,7 @@ const user = {
       Storage.set(user.users)      
       
       user.clear()
+      window.location.href = "http://127.0.0.1:5500/menu.html?";
       
     } catch (error) {
       alert(error.message)
