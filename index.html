@@ -25,29 +25,32 @@
 
     </nav>
 
-    <form action="" onsubmit="user.submit(event)">
+    <form id="home" action="" onsubmit="user.submit(event)">
 
 
-      <div id="form">         
-        <div>
-          <label for="login">Login</label>
-          <input type="text" name="" id="login">
-        </div>
-        
-        <div>
-          <label for="password">Senha</label>
-          <input type="password" name="" id="password">
-        </div>
-        
+      <div id="form">    
+        <div id="loginSenha">
+
+          <div class="labelForm">
+            <label for="login">Login</label>
+            <input type="text" name="" id="login">
+          </div>
+          
+          <div class="labelForm">
+            <label for="password">Senha</label>
+            <input type="password" name="" id="password">
+          </div>
+          
+        </div>     
         <div id="buttons">
           <div>
             <label  for="enviar"></label>
-            <button id="enviar" >Enviar</button>
+            <button class="submit"id="enviar" >Enviar</button>
           </div>
 
           <div>
             <label for="cadastrar"></label>
-            <button id="cadastrar"><a href="/register.html">Cadastrar</a></button>
+            <button class="submit" id="cadastrar"><a href="/register.html">Cadastrar</a></button>
           </div>
         </div>
       </div>

@@ -25,24 +25,27 @@
 
     </nav>
 
-    <form action="" onsubmit="user.submit(event)">
-
-
+    <form id="register" action="" onsubmit="user.submit(event)">
+      
+      
       <div id="form">         
-        <div>
-          <label for="login">Login</label>
-          <input type="text" name="" id="login">
+
+        <div id="loginSenha">        
+          <div class="labelForm">
+            <label for="login">Login</label>
+            <input type="text" name="" id="login">
+          </div>
+          
+          <div class="labelForm">
+            <label for="password">Senha</label>
+            <input type="password" name="" id="password">
+          </div>
+          <div class="labelForm">
+            <label for="passwordConfirm">Confirmar Senha</label>
+            <input type="password" name="" id="passwordConfirm">
+          </div>
         </div>
-        
-        <div>
-          <label for="password">Senha</label>
-          <input type="password" name="" id="password">
-        </div>
-        <div>
-          <label for="passwordConfirm">Confirmar Senha</label>
-          <input type="password" name="" id="passwordConfirm">
-        </div>
-        
+          
         <div id="buttons">
           <div>
             <label  for="enviar"></label>
