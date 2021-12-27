@@ -28,23 +28,30 @@
           <tr>
             <th>Nome</th>
             <th>Senha</th>
-            <th>X</th>
+            <th>Edit</th>
+            <th>Remove</th>           
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>luiz</td>
-            <td>xd</td>            
-            <td>X</td>            
-          </tr>
-          <tr>
-            <td>luco</td>
-            <td>xxx</td>            
-            <td>X</td>            
-          </tr>
         </tbody>
-      </table>
+      </table>      
     </div>    
   </main>  
+  <div class="modal active">
+    <form action="" onsubmit="user.salvar(event)">
+      <div id="divLogin">
+        <label for="modalLogin"></label>
+        <input id="modalLogin" type="text" placeholder="">
+      </div>
+      <div id="divPassword">
+        <label for="modalPassword"></label>
+        <input id="modalPassword" type="password" placeholder="">
+      </div>
+      <div>
+        <button>Salvar</button>
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
