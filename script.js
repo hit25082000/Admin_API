@@ -143,6 +143,8 @@ const user = {
     user.clearTable()
 
     menu.innerUser()
+
+    return ind = 0
   },
 
   validate(){   
@@ -172,7 +174,7 @@ const menu = {
             <td>${x.login}</td>
             <td>${x.password}</td>            
             <td > <a onclick="user.edit(${index})">Editar</a> </td>            
-            <td > <a onclick="user.remove(${index})">Remover</a> </td>            
+            <td > <a onclick="user.remove(${index})" href="">Remover</a> </td>            
             <td hidden> ${index}  </td>            
       </tr>
       `
