@@ -58,7 +58,7 @@ const user = {
     }
   },
 
-  clear() {
+  clearLogin() {
     user.login.value = ""
     user.password.value = ""
     user.passwordConfirm.value = ""
@@ -89,7 +89,7 @@ const user = {
       user.users.push(usuario)  
       Storage.set(user.users)      
       
-      user.clear()
+      user.clearLogin()
       window.location.href = "http://127.0.0.1:5500/menu.html?";
       
     } catch (error) {
@@ -103,9 +103,7 @@ const user = {
     Storage.set(user.users) 
   },
 
-  edit(index){    
-    console.log(user.users[index])    
-    
+  edit(index){
     const modalLogin = document.querySelector('#divLogin')
     const modalPassword = document.querySelector('#divPassword')    
     
@@ -129,12 +127,8 @@ const user = {
     const newLogin = document.querySelector('#modalLogin')
     const newPassword = document.querySelector('#modalPassword')   
     
-    console.log(user.users[user.ind])
-    
     user.users[user.ind].login = newLogin.value
-    user.users[user.ind].password = newPassword.value
-    
-    console.log(user.users[user.ind])
+    user.users[user.ind].password = newPassword.value  
 
     document.querySelector('.modal').classList.toggle('active')
     
@@ -174,8 +168,7 @@ const menu = {
             <td>${x.login}</td>
             <td>${x.password}</td>            
             <td > <a onclick="user.edit(${index})">Editar</a> </td>            
-            <td > <a onclick="user.remove(${index})" href="">Remover</a> </td>            
-            <td hidden> ${index}  </td>            
+            <td > <a onclick="user.remove(${index})" href="">Remover</a> </td>  
       </tr>
       `
       tr.innerHTML = userTable
